@@ -1,4 +1,3 @@
-
 Redmine Scmacros
 ================
 Gregory Romé
@@ -66,7 +65,7 @@ Example of additional feature:
 -----------------------------------------------
 
 Known Issues
------------------
+------------
 
 None.
 
