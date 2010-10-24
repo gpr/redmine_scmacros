@@ -1,3 +1,0 @@
-= scmacros
-
-Description goes here

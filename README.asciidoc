@@ -1,0 +1,76 @@
+Redmine Scmacros
+==========================
+Gregory Romé
+v0.1.0, 24-oct-2010
+
+Copyright (C) 2010 Gregory Romé
+
+This plugin provides Wiki macros related to repositories. The first version
+(0.1.0) includes only one macro for including and formatting repository content.
+
+License
+-------
+
+--------------------------------------------------------------------------------
+Copyright (C) 2010 Gregory Romé
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+--------------------------------------------------------------------------------
+
+Installation
+------------
+
+See redmine plugin installation howto.
+
+This plugin does not modify the database.
+
+Documentation
+-------------
+
+To include a repository file and format it:
+
+-------------------------------
+{{repo_include(file_path)}} <1>
+-------------------------------
+
+<1> +file_path+ is the file to include.
+
+TODO
+----
+
+The macro must be extended for controlling if the Wiki format is applied or not.
+Moreover a code block could be also used for code inclusion. Maybe those options
+should be added by using another macro name.
+
+Example of additional feature:
+
+-----------------------------------------------
+{{repo_include(file_path, revision)}}
+
+{{repo_include(file_path, revision)}}
+
+{{repo_include(file_path, revision, is_block)}}
+-----------------------------------------------
+
+Known Issues
+-----------------
+
+None.
+
+Notes
+-----
+
+This plugin is very simple. It will be enhance by adding new macros and by
+improving the first one.
