@@ -1,4 +1,4 @@
-# Redmine Scmacros plugin
+# ScmacrosRepositoryInclude
 # Copyright (C) 2010 Gregory Romé
 #
 # This program is free software; you can redistribute it and/or
@@ -16,16 +16,23 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 require 'redmine'
 
-Dir::foreach(File.join(File.dirname(__FILE__), 'lib')) do |file|
-  next unless /\.rb$/ =~ file
-  require file
-end
-
-Redmine::Plugin.register :redmine_scmacros do
-  name 'Redmine Scmacros plugin'
-  author 'Gregory Romé'
-  description 'Add macros related to SCM (repository)'
-  version '0.0.1'
-  url 'http://github.com/gpr/redmine_scmacros'
-  author_url 'http://github.com/gpr'
+module ScmacrosRepositoryInclude
+  Redmine::WikiFormatting::Macros.register do
+    desc "Includes and formats a file from repository.\n\n" +
+      " \{{repo_include(file_path)}}\n"
+    macro :repo_include do |obj, args|
+      
+      return nil if args.length < 1
+      file_path = args[0].strip
+    
+      repo = @project.repository
+      return nil unless repo
+      
+      text = repo.cat(file_path)
+      
+      o = textilizable(text)
+      
+      return o
+    end
+  end
 end
