@@ -15,20 +15,24 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 require 'redmine'
+include RepositoriesHelper
 
 module ScmacrosRepositoryInclude
   Redmine::WikiFormatting::Macros.register do
     desc "Includes and formats a file from repository.\n\n" +
-      " \{{repo_include(file_path)}}\n"
+      " \{{repo_include(file_path)}}\n" +
+      " \{{repo_include(file_path, rev)}}\n"
     macro :repo_include do |obj, args|
       
       return nil if args.length < 1
       file_path = args[0].strip
+      rev ||= args[1].strip if args.length > 1
     
       repo = @project.repository
       return nil unless repo
       
-      text = repo.cat(file_path)
+      text = repo.cat(file_path, rev)
+      text = RepositoriesHelper::to_utf8(text)
       
       o = textilizable(text)
       
