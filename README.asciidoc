@@ -3,10 +3,12 @@ Redmine Scmacros
 Gregory Romé
 v0.1.0, 24-oct-2010
 
+YOSHITANI Mitsuhiro
+v0.1.0-forked, 13-dec-2011
+
 Copyright (C) 2010 Gregory Romé
 
-This plugin provides Wiki macros related to repositories. The first version
-(0.1.0) includes only one macro for including and formatting repository content.
+This plugin provides Wiki macros related to repositories.
 
 License
 -------
@@ -36,6 +38,11 @@ See redmine plugin installation howto.
 
 This plugin does not modify the database.
 
+Required
+--------
+
+Redmine 1.3.0 later
+
 Documentation
 -------------
 
@@ -43,6 +50,8 @@ To include a repository file and format it:
 
 -------------------------------
 {{repo_include(file_path)}} <1>
+
+{{repo_include(file_path, revision)}}
 -------------------------------
 
 <1> +file_path+ is the file to include.
@@ -57,10 +66,6 @@ should be added by using another macro name.
 Example of additional feature:
 
 -----------------------------------------------
-{{repo_include(file_path, revision)}}
-
-{{repo_include(file_path, revision)}}
-
 {{repo_include(file_path, revision, is_block)}}
 -----------------------------------------------
 
