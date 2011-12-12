@@ -15,7 +15,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 require 'redmine'
-include RepositoriesHelper
 
 module ScmacrosRepositoryInclude
   Redmine::WikiFormatting::Macros.register do
@@ -32,7 +31,7 @@ module ScmacrosRepositoryInclude
       return nil unless repo
       
       text = repo.cat(file_path, rev)
-      text = RepositoriesHelper::to_utf8(text)
+      text = Redmine::CodesetUtil.to_utf8_by_setting(text)
       
       o = textilizable(text)
       
