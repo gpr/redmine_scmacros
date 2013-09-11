@@ -30,6 +30,25 @@ module ScmacrosRepositoryInclude
       
       text = repo.cat(file_path)
       
+      o = text
+      
+      return o
+    end
+  end
+
+  Redmine::WikiFormatting::Macros.register do
+    desc "Includes and formats a file from repository.\n\n" +
+      " \{{repo_includewiki(file_path)}}\n"
+    macro :repo_includewiki do |obj, args|
+      
+      return nil if args.length < 1
+      file_path = args[0].strip
+    
+      repo = @project.repository
+      return nil unless repo
+      
+      text = repo.cat(file_path)
+      
       o = textilizable(text)
       
       return o
