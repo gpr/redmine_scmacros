@@ -1,12 +1,10 @@
 Redmine Scmacros
 ================
-Gregory Romé
-v0.1.0, 24-oct-2010
+Gregory ROMÉ, Mitsuhiro YOSHITANI
+v0.2.0, 02-oct-2013
 
-YOSHITANI Mitsuhiro
-v0.1.0-forked, 13-dec-2011
-
-Copyright (C) 2010 Gregory Romé
+Copyright (C) 2010-2013 Gregory ROMÉ
+Copyright (C) 2011 Mitsuhiro YOSHITANI
 
 This plugin provides Wiki macros related to repositories.
 
@@ -14,7 +12,8 @@ License
 -------
 
 --------------------------------------------------------------------------------
-Copyright (C) 2010 Gregory Romé
+Copyright (C) 2010-2013 Gregory ROMÉ
+Copyright (C) 2011 Mitsuhiro YOSHITANI
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -77,5 +76,5 @@ None.
 Notes
 -----
 
-This plugin is very simple. It will be enhance by adding new macros and by
+This plugin is very simple. It SHOULD be enhanced by adding new macros and by
 improving the first one.
