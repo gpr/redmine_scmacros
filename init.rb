@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Redmine Scmacros plugin
 # Copyright (C) 2010-2013 Gregory ROMÉ
 # Copyright (C) 2011 Mitsuhiro YOSHITANI

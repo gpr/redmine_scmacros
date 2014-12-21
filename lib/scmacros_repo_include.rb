@@ -51,6 +51,7 @@ module ScmacrosRepositoryInclude
       return nil unless repo
       
       text = repo.cat(file_path)
+      text = Redmine::CodesetUtil.to_utf8_by_setting(text)
       
       o = textilizable(text)
       
