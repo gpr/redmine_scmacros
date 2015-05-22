@@ -51,9 +51,17 @@ To include a repository file and format it:
 {{repo_include(file_path)}} <1>
 
 {{repo_include(file_path, revision)}}
+
+{{repo_includewiki(file_path)}} <2>
+
+{{repo_includemd(file_path)}} <3>
 -------------------------------
 
 <1> +file_path+ is the file to include.
+
+<2> Format the file as Textile.
+
+<3> Format the file as Markdown.
 
 TODO
 ----
