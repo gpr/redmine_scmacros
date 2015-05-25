@@ -58,4 +58,25 @@ module ScmacrosRepositoryInclude
       return o
     end
   end
+
+  Redmine::WikiFormatting::Macros.register do
+    desc "Includes and formats a file from repository as a Markdown.\n\n" +
+      " \{{repo_includemd(file_path)}}\n"
+    macro :repo_includemd do |obj, args|
+      
+      return nil if args.length < 1
+      file_path = args[0].strip
+    
+      repo = @project.repository
+      return nil unless repo
+      
+      text = repo.cat(file_path)
+      text = Redmine::CodesetUtil.to_utf8_by_setting(text)
+      
+      o = Redmine::WikiFormatting.to_html(:markdown, text)
+      o = o.html_safe
+      
+      return o
+    end
+  end
 end
